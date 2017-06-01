@@ -1,0 +1,222 @@
+﻿
+@{
+    ViewBag.Title = "Начало";
+}
+
+<h2>Лекции</h2>
+
+<div class="jumbotron">
+    <h3><b>Сериализация на обекти</b></h3>
+    <div class="articles">
+        <p>Java ни предлага механизъм, наречен сериализация на обекти. При него даден обект се представя като бинарна поредица съдържаща описание на класа на обекта и неговите конкретни данни (член-променливи). Така получената бинарна поредица може да бъде изпращана&nbsp;чрез ObjectOutputStream – например да бъде записана във файл, да бъде изпратена по мрежата до друг компютър и т.н. Четенето на обекта се осъществява чрез прозцес наречен „десериализация“ – при него обекта се възстановява в паметта в оригиналния си вид. Извършва се чрез ObjectInputStream. Най-важното за&nbsp;процеса на сериализация-десериализация е, че те са платформено независими, т.е. няма проблем да сериализиран на един компютър и да бъде десериализиран на друг, който е със съвсем различни характеристики (дори и различна Java виртуална машина).<span id="more-9918"></span></p>
+        <p>ObjectOutputStream обхваща почти всички функционалности, които предлага DataOutputStream. С изключение на метод size(), който при ObjectOutputStream липсва, той притежава същите методи:&nbsp;void close(), void flush(),&nbsp;void write(byte[] b, int off, int len),&nbsp;void write(int b),&nbsp;void writeBoolean(boolean v),&nbsp;void writeByte(int v),&nbsp;void writeBytes(String s),&nbsp;void writeChar(int v),&nbsp;void writeChars(String s),&nbsp;void writeDouble(double v),&nbsp;void writeFloat(float v),&nbsp;void writeInt(int v),&nbsp;void writeLong(long v),&nbsp;void writeShort(int v) и void&nbsp;writeUTF(String str). Това дублиране е нормално, тъй като и ObjectOutputStream и DataOutputStream имплементират&nbsp;един и същи интерфейс – DataOutput. Допълнителните методи, които ObjectOutputStream добавя са няколко, но най-съществения от тях е&nbsp;<strong>void writeObject(Object obj)</strong>. Чрез него даден обект се записва в потока. Именно той извършва процеса „сериализация“.</p>
+        <p>Положението с ObjectInputStream е същото – той притежава методите на DataInputStream, но допълнително добавя няколко метода, най-съществения от които е <strong>Object readObject()</strong>. Чрез този метод ще бъде прочетен поредния обект от входния поток и ще бъде десериализиран. Забележете, че обекта ще бъде върнат като тип Object – ще трябва да го трансформирате до типа, който ви интересува, ръчно.</p>
+        <p>За да може даден обект да бъде сериализируем, неговия клас трябва да имплементира интерфейс java.io.Serializable. Този интерфейс не ви задължава да добавяте никакви допълнителни методи. Единственото изискване е да добавите следната член-променлива:</p>
+        <ul>
+            <li>private static final long serialVersionUID = 1L</li>
+        </ul>
+        <p>Не е задължително да имате private модификатор за достъп, но рядко има смисъл тази член-променлива да е видима. Задължително е да е статична и да е константа. Колкото до стойността й – може да дефинирате каквото число си пожелаете. Важно условие е тогава, когато обекта ще бъде десериализиран, стойността да съвпада. С други думи ако вие запишете обект с например тази версия 1L, а по-късно промените класа на версия 2L, новата версия няма да работи със стария обект, та дори промените да са само козметични (или дори никакви) – грешката ще бъде „local class incompatible: stream classdesc serialVersionUID = 1, local class serialVersionUID = 2“.</p>
+        <p>Нека демонстрираме казаното дотук с прост пример. Създаваме обект от тип Person, записваме го във файл и после го прочитаме обратно:</p>
+<pre>import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
+public class Tester {
+  public static void main(String[] args) {
+    Person p = new Person("Ivan", 18);
+    
+    // Сериализираме и записваме във файл
+    try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("test.ser"))){
+      out.writeObject(p);
+      out.flush();
+      out.close();
+    }
+    catch(IOException e){
+      System.out.println("Проблем при сериализацията "+e.getMessage());
+      return;
+    }
+    
+    // Прочитаме, десериализираме обекта и го възстановяваме
+    try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("test.ser"))){
+      Object o = in.readObject();
+      if(!(o instanceof Person)){
+        System.out.println("Прочетения обект не е Person");
+        return;
+      }
+      Person restored = (Person)o;
+      restored.print();
+      in.close();
+    }
+    catch(IOException e1){
+      System.out.println("Проблем при десериализацията "+e1.getMessage());
+      return;
+    }
+    catch(ClassNotFoundException e2){
+      System.out.println("Прочетен е непознат обект "+e2.getMessage());
+      return;      
+    }
+  }
+}
+class Person implements Serializable{
+  private static final long serialVersionUID = 1L;
+  String name;
+  int age;
+  Person(String name, int age){
+    this.name = name;
+    this.age = age;
+  }
+  void print(){
+    System.out.println(this.name+" is "+this.age+" old");
+  }
+}</pre>
+        <p>Когато разработвате клиент-сървър приложения, неминуемо ще се сблъскате с един проблем – обектите, които се сериализират и десериализират при пренасяне от един хост на друг, трябва освен да са идентични като функционалност и версия, да са също така от един и същи пакет (package). Не е невъзможно сървърното и клиентското приолжение да работят в различни package с едно и също име (все пак сървъра работи на една машина, а клиента на съвсем друга). Ако трябва и двете да се използват на една машина, както е в developer варианта, при който работим с връзка по localhost, може просто да ги сложите на различни места във файловата структура (например ако пакета се казва „mypackage“, сървъра да е в директория „./server/mypackage“, а клиента в „./client/mypackage“). При&nbsp;такъв вариант не трябва да слагате едновременно сървъра и клиента в ClassPath. Най-добре е обаче да изолирате сериализируемите класове в свой собствен отделен пакет, да го пакетирате в Jar файл и да го включвате като допълнителна библиотека веднъж в сървърното и веднъж в клиентското прилжение.</p>
+        <p>Ще демонстрираме това подробно с пример. Ще направим клиент-сървър приложение, което изпраща дефинирания по-горе клас Person от един хост на друг. Ще направим демонстрацията с DrJava, но по аналогичен начин ще се получи с всяка друга среда.</p>
+        <p>Първо искаме да създадем самостоятелен Project за клас Person.</p>
+        <p><img class="aligncenter size-full wp-image-9919" src="https://www.cphpvb.net/wp-content/uploads/2015/12/1.png" alt="1" width="255" height="120"></p>
+        <p>Задайте му име „MyDemoClientServerLib“. Запишете го в някоя директория – в моя пример ще е в директория „demo“ на Desktop. Вътре в тази директория създайте поддиректория MyDemoClientServerLib. Нея трябва да я зададете като ProjectRoot и Working Directory. Сладващият диалогов прозорец ще изглежда подобно на това:</p>
+        <p><a href="https://www.cphpvb.net/wp-content/uploads/2015/12/2.png"><img class="aligncenter size-medium wp-image-9920" src="https://www.cphpvb.net/wp-content/uploads/2015/12/2-298x300.png" alt="2" width="298" height="300"></a></p>
+        <p>Натиснете OK. Отидете на File &gt; New Java Class и добавете клас с име „Person“.</p>
+        <p><a href="https://www.cphpvb.net/wp-content/uploads/2015/12/3.png"><img class="aligncenter size-medium wp-image-9921" src="https://www.cphpvb.net/wp-content/uploads/2015/12/3-300x233.png" alt="3" width="300" height="233"></a></p>
+        <p>Заменете автоматично генерираното съдържание със следното:</p>
+<pre>package MyDemoClientServerLib;
+import java.io.Serializable;
+public class Person implements Serializable{
+   private static final long serialVersionUID = 1L;
+   String name;
+   int age;
+   public Person(String name, int age){
+      this.name = name;
+      this.age = age;
+   }
+   public void print(){
+      System.out.println(this.name+" is "+this.age+" old");
+   }
+}</pre>
+        <p>Запаметете файла в директория MyDemoClientServerLib. Компилирайте проекта. След това отидете на Project &gt; Create Jar File From Porject:</p>
+        <p>&nbsp;</p>
+        <p><a href="https://www.cphpvb.net/wp-content/uploads/2015/12/4.png"><img class="aligncenter size-medium wp-image-9926" src="https://www.cphpvb.net/wp-content/uploads/2015/12/4-300x226.png" alt="4" width="300" height="226"></a></p>
+        <p>и изберете име за Jar файла&nbsp;MyDemoClientServerLib.jar:</p>
+        <p><a href="https://www.cphpvb.net/wp-content/uploads/2015/12/5.png"><img class="aligncenter size-medium wp-image-9924" src="https://www.cphpvb.net/wp-content/uploads/2015/12/5-300x238.png" alt="5" width="300" height="238"></a></p>
+        <p>Готово – нашата библиотека с въпросния клас Person е съхранена (в примера във файлче&nbsp;на моя Desktop). Jar файловете са просто Zip архиви, съдържащи класовете на проекта и допълнителен manifest файл, в който може да се добавят допълнителни характеристики да дадената библиотека или приложение.</p>
+        <p>Сега затворете този проект и по аналогичен начин създайте нов проект, който ще бъде с име MyDemoServer. При създаването на проекта, добавете вече създадения Jar файл в полето „Extra ClassPath“. За удобство преди това можете да го копирате директно в директорията на проекта:</p>
+        <p><a href="https://www.cphpvb.net/wp-content/uploads/2015/12/6.png"><img class="aligncenter size-medium wp-image-9925" src="https://www.cphpvb.net/wp-content/uploads/2015/12/6-278x300.png" alt="6" width="278" height="300"></a></p>
+        <p>След това в проекта&nbsp;добавете клас MyDemoServer, който да има следното съдържание:</p>
+<pre>package MyDemoServer;
+import MyDemoClientServerLib.Person;
+import java.io.ObjectInputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.ServerSocket;
+public class MyDemoServer{
+  public static void main(String[] args){
+    ServerSocket ss = null;
+    try{
+      ss = new ServerSocket(5000);
+    }
+    catch(IOException e){
+      System.out.println("Не мога да стартирам ServerSocket");
+      return;
+    }
+    System.out.println("Сървърът е стартиран");
+    
+    try(Socket sock = ss.accept()){
+      ObjectInputStream in = new ObjectInputStream(sock.getInputStream());
+      Object o = in.readObject();
+      if(!(o instanceof Person)){
+        System.out.println("Получих грешен обект");
+        return;
+      }
+      Person p = (Person)o;
+      p.print();
+      in.close();
+      sock.close();
+    }
+    catch(IOException e){
+      System.out.println("Проблем с получаването на данни");
+      return;
+    }
+    catch(ClassNotFoundException e2){
+      System.out.println("Изпратиха ни непознат обект");
+      return;      
+    }
+  }  
+}</pre>
+        <p>Компирилайте проекта и стартирайте сървъра. Отворете нова инстанция на DrJava и по абсолютно същият начин създайте нов проект с име MyDemoClient, добавете в него MyClientServerLib.jar и създайте клас MyDemoClient.java със следното съдържание:</p>
+<pre>package MyDemoClient;
+import MyDemoClientServerLib.Person;
+import java.io.ObjectOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+public class MyDemoClient{
+  public static void main(String[] args){
+    Person p = new Person("Ivan", 18);
+    System.out.println("Свързвам се...");
+    try(Socket sock = new Socket("localhost", 5000)){
+      ObjectOutputStream out = new ObjectOutputStream(sock.getOutputStream());
+      out.writeObject(p);
+      out.flush();
+      out.close();
+      sock.close();
+      System.out.println("Данните са изпратени");
+    }
+    catch(IOException e){
+      System.out.println("Проблем с изпращането на данни");
+      return;
+    }
+  }
+}</pre>
+        <p>С това примерът е завършен. Ако искате, можете допълнително да пакетирате сървъра и клиента като самостоятелни Jar файлове. В Project Properties задайте&nbsp;MyDemoClient.MyDemoClient като Main клас за клиента и аналогично&nbsp;MyDemoServer.MyDemoServer като Main клас за сървъра. След това и на двата проекта дайте Project &gt; Create Jar File from Project. Отбележете, че са „Executable“ и ги създайте – например като Client.jar и Server.jar. Ще можете да стартирате програмите под Command Prompt на Windows по следния начин:</p>
+        <ul>
+            <li>java -jar Server.jar</li>
+            <li>java -jar Client.jar</li>
+        </ul>
+        <p class="showtags"></p>
+        <div class="chist">&nbsp;</div>
+    </div>
+</div>
+
+<div class="jumbotron">
+    <h3><b>Запознаване със средата на Visual Studio .Net</b></h3>
+    <div class="articles">
+        <p>Когато отворите Visual Studio .Net ще видите приблизително следния екран:</p>
+        <div id="attachment_332" style="width: 283px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/first.png"><img class="size-medium wp-image-332" title="first" src="https://www.cphpvb.net/wp-content/uploads/2008/11/first-273x300.png" alt="Visual Studio .Net първа страница" width="273" height="300"></a><p class="wp-caption-text">Visual Studio .Net – заглавна страница</p></div>
+        <p>Лентата в ляво на екрана е динамична. Тя може да бъде заменяна от различни инструменти. Центъра на екрана е обикновено областта за редактиране на програмния код, а в лентата с инструменти горе обикновено се извеждат само най-често използваните опции от главното меню.<span id="more-331"></span></p>
+        <p>
+            За да стартирате нов проект направете следното:<br>
+            1. Стартирайте Visual Studio .NET.<br>
+            2. Натиснете отидете на „File -&gt; New Project“<br>
+            3. Отидете на „Visual C++ -&gt; MFC -&gt; MFC Application“ и задайте име „MyFirstApp“.<br>
+            4. Натиснете ОК
+        </p>
+        <div id="attachment_333" style="width: 310px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/second.png"><img class="size-medium wp-image-333" title="second" src="https://www.cphpvb.net/wp-content/uploads/2008/11/second-300x209.png" alt="Нов MFC проект за Visual Studio .Net" width="300" height="209"></a><p class="wp-caption-text">Нов MFC проект за Visual Studio .Net</p></div>
+        <p>Ще се появи „MFC Application Wizard“ – съветник за създаване на базово приложение. От „Application Type“ изберете да използвате „Dialog based“ и изберете английски език. Екрана ще изглежда по следният начин:</p>
+        <div id="attachment_336" style="width: 310px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/third1.png"><img class="size-medium wp-image-336" title="third1" src="https://www.cphpvb.net/wp-content/uploads/2008/11/third1-300x213.png" alt="MFC Wizard" width="300" height="213"></a><p class="wp-caption-text">MFC Wizard</p></div>
+        <p>Натиснете на бутона „Finish“ и ще създадете вашето базово приложение. По подразбиране би трябвало в помощната лента вляво да се е отворил „Solution Explorer“. В него можете да видите всичките файлове във вашето приложение.</p>
+        <p>За да изпълните програмата отидете на „Debug &gt; Start“. Visual Studio първо ще ви попита дали искате да компилирате проекта и след това програмата ще се зареди. В момента вие създадохте вашето първо базово приложение.</p>
+        <p>Нека сега да въведем някаква функционалност в нашата програма. За да проектирате прозореца на приложната програма изберете „View -&gt; Resource View“. От „MyFirstProject.rc &gt; Dialog“ изберете „IDD_MYFIRSTPROJECT_DIALOG“:</p>
+        <div id="attachment_337" style="width: 310px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/fifth.png"><img class="size-medium wp-image-337" title="fifth" src="https://www.cphpvb.net/wp-content/uploads/2008/11/fifth-300x249.png" alt="Resource View за MFC dialog app" width="300" height="249"></a><p class="wp-caption-text">Resource View за MFC dialog app</p></div>
+        <p>Маркирайте текста в диалоговата рамка и го изтрийте чрез клавиша Delete. После разтеглете бутоните, както е показано на следващата картинка:</p>
+        <div id="attachment_338" style="width: 265px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/sixth.png"><img class="size-medium wp-image-338" title="sixth" src="https://www.cphpvb.net/wp-content/uploads/2008/11/sixth.png" alt="Редактиране на MFC диалог" width="255" height="223"></a><p class="wp-caption-text">Редактиране на MFC диалог</p></div>
+        <p>Натиснете с десния бутон на мишката върху бутона Cancel и изберете „Properties“. Ще ви се отвори лентата със свойства „Properties Window“ (има я като опция и в менюто „View“). Променете свойството Caption, от „Cancel“ на „&amp;Close“. След като натиснете клавиша Enter ще видите, че текста на бутона се промени. Освен това първата буква е подчертана (тоест създадохме „бърз клавиш“ – ако натиснете „C“ от клавиатурата, то автоматично ще се натисне бутона). Това се постигна именно със символа „&amp;“.</p>
+        <p>По аналогичен начин променете текста на бутона ОК на „&amp;Hello World“. Сега обаче променете и съдържанието на полето ID на „IDHELLOWORLD“. Ето как би изглеждал работния екран в този момент:</p>
+        <div id="attachment_339" style="width: 276px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/seventh.png"><img class="size-medium wp-image-339" title="seventh" src="https://www.cphpvb.net/wp-content/uploads/2008/11/seventh-266x300.png" alt="Промяна на Caption и ID на бутон" width="266" height="300"></a><p class="wp-caption-text">Промяна на Caption и ID на бутон</p></div>
+        <p>Компилирайте програмата и я стартирайте. Ще видите, че бутона „Close“ все още затваря приложението, но действието на бутона „Hello World“ е изчезнало. Това е именно защото променихме „ID“ на бутона. В програмите писани чрез Microsoft Foundation Classes (MFC) се съдържат готови макроси, които определят коя функция ще бъде активирана в зависимост от съдържанието на ID на бутона. По подразбиране имахме създадени функции за IDOK и IDCANCEL. В момента за нашия бутон IDHELLOWORLD няма съществуваща функция.</p>
+        <p>За да добавим нужната функционалност към бутона „Hello World“ щракнете с десния бутон на мишката върху него и изберете „Add Event Handler…“. Изберете „BN_CLICKED“ (тоест събитието за натискане на бутон) и натиснете бутона „Add and edit…“.</p>
+        <div id="attachment_340" style="width: 310px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/eight.png"><img class="size-medium wp-image-340" title="eight" src="https://www.cphpvb.net/wp-content/uploads/2008/11/eight-300x213.png" alt="Добавяне на събитие към бутон" width="300" height="213"></a><p class="wp-caption-text">Добавяне на събитие към бутон</p></div>
+        <p>Ще се отвори файлът „MyFirstProjectDlg.cpp“ (винаги можете да го достъпвате чрез Solution Explorer). Ще видите, че има добавена член-функция на класа „CMyFirstProjectDlg“, която се казва „OnBnClickedHelloworld()“. Добавете следния код вътре в тялото на член-функцията:</p>
+<pre>	// За Visual Studio 2003
+	MessageBox("Hey, this is my first VCPP application!");
+	// За Visual Studio 2005 и по-нови версии
+	MessageBox(_T("Hey, this is my first VCPP application!"));</pre>
+        <p>Разликата се получава защото 16 битовите Unicode символи се зареждат по подразбиране в по-новите версии. От сега нататък ще разработваме упражненията за Visual Studio .Net 2005.</p>
+        <p>Изпълнете програмата и натиснете бутона „Hello World“. Вие създадохте първото си приложение, което при натискане на бутон извежда предефинирано съобщение.</p>
+        <div id="attachment_341" style="width: 225px" class="wp-caption aligncenter"><a href="https://www.cphpvb.net/wp-content/uploads/2008/11/nine.png"><img class="size-medium wp-image-341" title="nine" src="https://www.cphpvb.net/wp-content/uploads/2008/11/nine.png" alt="Първата ни програма" width="215" height="156"></a><p class="wp-caption-text">Първата ни програма</p></div>
+        <p>Забелязвате, че диалоговата рамка на така създаденото съобщение има заглавие „MyFirstProject“. Тя автоматично копира заглавието от извикващия диалог. За да го промените променете извикването на функцията MessageBox, като добавите като втори параметър текст _T(„New box title“).</p>
+        <p><strong>Задача</strong>: Променете заглавието (Caption) на главния диалог. За целта използвайте „Properties Window“.</p>
+        <p class="showtags"></p>
+        <div class="chist">&nbsp;</div>
+    </div>
+</div>
+

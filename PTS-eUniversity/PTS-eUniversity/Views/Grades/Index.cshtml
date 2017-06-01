@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PTS_eUniversity.Models.StudentGrade>
+
+@{
+    ViewBag.Title = "Оценки";
+    var average = Model.Select(x => x.Grade).Average().ToString("F2");
+}
+
+<h2>Оценки</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Предмет</th>
+            <th>Оценка</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.Subject.Name</td>
+                <td>@grade.Grade</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><b>Среден успех: @average</b></p>

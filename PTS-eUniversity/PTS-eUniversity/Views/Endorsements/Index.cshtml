@@ -1,0 +1,28 @@
+﻿@model Dictionary<string, bool>
+
+@{
+    ViewBag.Title = "Заверки";
+    var subjectsWithoutEndorsement = Model.Values.Where(x => !x).Count();
+}
+
+<h2>Заверки</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Предмет</th>
+            <th>Заверка</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var endorsement in Model)
+        {
+            <tr>
+                <td>@endorsement.Key</td>
+                <td>@(endorsement.Value ? "Да" : "Не")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><b>Брой предмети без оценка: @subjectsWithoutEndorsement</b></p>

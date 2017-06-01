@@ -1,0 +1,118 @@
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\ApplicationInsights.config
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\csc.exe
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\vbc.exe
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\PTS-eUniversity.dll.config
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\PTS-eUniversity.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\PTS-eUniversity.pdb
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.SqlServer.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.Web.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Owin.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Helpers.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Mvc.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Razor.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Razor.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.SqlServer.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.Web.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Razor.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Razor.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Helpers.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Mvc.xml
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\obj\Debug\PTS-eUniversity.dll
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\obj\Debug\PTS-eUniversity.pdb
+C:\Users\Ivo\Desktop\PTS-Project\PTS-eUniversity\PTS-eUniversity\obj\Debug\PTS-eUniversity.csprojResolveAssemblyReference.cache
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\ApplicationInsights.config
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\csc.exe
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\vbc.exe
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\VBCSCompiler.exe
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\PTS-eUniversity.dll.config
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\PTS-eUniversity.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\PTS-eUniversity.pdb
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.SqlServer.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.Web.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Owin.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Helpers.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Mvc.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Razor.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Razor.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\EntityFramework.SqlServer.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.Web.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Razor.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Webpages.Razor.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Helpers.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\bin\System.Web.Mvc.xml
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\obj\Debug\PTS-eUniversity.csprojResolveAssemblyReference.cache
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\obj\Debug\PTS-eUniversity.dll
+C:\Users\Mila I\Desktop\project\PTS-Project\PTS-eUniversity\PTS-eUniversity\obj\Debug\PTS-eUniversity.pdb

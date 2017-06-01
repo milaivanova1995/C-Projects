@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PTS_eUniversity.Models.Insurance>
+
+@{
+    ViewBag.Title = "Осигуровки";
+}
+
+<h2>Осигуровки</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>Сума</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var insurance in Model)
+        {
+            <tr>
+                <td>@insurance.DateIssued.ToLongDateString()</td>
+                <td>@insurance.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>

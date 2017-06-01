@@ -1,0 +1,39 @@
+﻿@model PTS_eUniversity.Models.User
+
+@{
+    ViewBag.Title = "Профил";
+    var average = Model.Grades.Select(x => x.Grade).Average().ToString("F2");
+}
+
+<h2>Профил на потребителя</h2>
+
+<div>
+    <span>Име: </span>
+    <span>@Model.FirstName</span>
+    <br />
+</div>
+
+<div>
+    <span>Фамилия: </span>
+    <span>@Model.LastName</span>
+    <br />
+</div>
+
+<div>
+    <span>Имейл: </span>
+    <span>@Model.Email</span>
+    <br />
+</div>
+
+<div>
+    <span>Факултет: </span>
+    <span>@Model.Faculty.Name</span>
+    <br />
+</div>
+
+<div>
+    <span>Среден успех: </span>
+    <span>@average</span>
+    <br />
+</div>
+
