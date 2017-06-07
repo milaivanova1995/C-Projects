@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Roots >
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="UserName" />
+    <RootPropertyPathName Name="HotelNames" />
+    <RootPropertyPathName Name="name" />
+    <RootPropertyPathName Name="PicPath" />
+    <RootPropertyPathName Name="ListPrices" />
+    <RootPropertyPathName Name="Prices" />
+    <RootPropertyPathName Name="ListTypes" />
+    <RootPropertyPathName Name="RmType" />
+    <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Stars" />
+    <RootPropertyPathName Name="Phone" />
+    <RootPropertyPathName Name="Address" />
+    <RootPropertyPathName Name="City" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="HotelName" />
+    <RootPropertyPathName Name="pass" />
+    <RootPropertyPathName Name="info" />
+    <RootPropertyPathName Name="sigIn" />
+    <RootPropertyPathName Name="usrNm" />
+    <RootPropertyPathName Name="password" />
+    <RootPropertyPathName Name="Err" />
+    <RootPropertyPathName Name="phone" />
+    <RootPropertyPathName Name="lName" />
+    <RootPropertyPathName Name="fName" />
+    <RootPropertyPathName Name="userName" />
+    <RootPropertyPathName Name="addUsr" />
+    <RootPropertyPathName Name="Error" />
+    <RootPropertyPathName Name="To" />
+    <RootPropertyPathName Name="From" />
+    <RootPropertyPathName Name="BtnReserve" />
+    <RootPropertyPathName Name="RmCount" />
+    <RootPropertyPathName Name="Types" />
+    <RootPropertyPathName Name="RoomType" />
+    <RootPropertyPathName Name="HtlName" />
+    <RootPropertyPathName Name="LName" />
+    <RootPropertyPathName Name="FName" />
+    <RootPropertyPathName Name="ListRes" />
+    <RootPropertyPathName Name="Info" />
+  </Roots.PropertyPathNames>
+  <Roots.RootTypes>
+    <RootType FullName="Windows.UI.Xaml.Application">
+      <RootProperty Name="RequestedTheme" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="DataContext" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="ImageSource" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Items" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="FontSize" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="FontSize" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Background" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="RenderTransformOrigin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+    </RootType>
+    <RootType FullName="HotelReservation.View.Catalog" />
+    <RootType FullName="Windows.UI.Xaml.Media.LinearGradientBrush">
+      <RootProperty Name="EndPoint" />
+      <RootProperty Name="StartPoint" />
+      <RootProperty Name="GradientStops" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.GradientStop">
+      <RootProperty Name="Color" />
+      <RootProperty Name="Offset" />
+    </RootType>
+    <RootType FullName="HotelReservation.View.HotelOverview" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
+      <RootProperty Name="MapServiceToken" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="HotelReservation.View.MapView" />
+    <RootType FullName="HotelReservation.ViewModel.SigIn" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Password" />
+    </RootType>
+    <RootType FullName="HotelReservation.View.NavigationPage" />
+    <RootType FullName="HotelReservation.ViewModel.ConnectToUsers" />
+    <RootType FullName="HotelReservation.View.Registration" />
+    <RootType FullName="HotelReservation.ViewModel.ReservationForm" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Date" />
+    </RootType>
+    <RootType FullName="HotelReservation.View.Reservation" />
+    <RootType FullName="HotelReservation.View.UserData" />
+  </Roots.RootTypes>
+</Roots>

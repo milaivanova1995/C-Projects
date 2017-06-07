@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="HotelReservation.View.NavigationPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HotelReservation.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:HotelReservation.ViewModel"
+    mc:Ignorable="d"
+>
+
+    <Page.DataContext>
+        <vm:SigIn/>
+    </Page.DataContext>
+
+    <Grid Margin="0,0,0,10">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Images/bck.jpg"/>
+        </Grid.Background>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,68,0,0" TextWrapping="Wrap" Text="User Name:" VerticalAlignment="Top" Height="44" Width="158"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="32" Width="63"/>
+        <TextBox x:ConnectionId='1' Name="usrName" HorizontalAlignment="Left" Margin="173,68,0,0" TextWrapping="Wrap" Text="{Binding usrNm,Mode=TwoWay}" VerticalAlignment="Top" Width="177"/>
+        <Button x:ConnectionId='2' Content="Sign in" HorizontalAlignment="Left" Margin="85,246,0,0" VerticalAlignment="Top" Width="162" Command="{Binding sigIn}"                       />
+        <TextBlock HorizontalAlignment="Left" Margin="85,407,0,0" TextWrapping="Wrap" Text="Don't have registration?" VerticalAlignment="Top" Height="23" Width="171" RenderTransformOrigin="-0.79,8.406"/>
+        <Button x:ConnectionId='3' Content="Register" HorizontalAlignment="Left" Margin="85,462,0,0" VerticalAlignment="Top" Width="162"                      Background="#33000000"/>
+        <TextBlock x:ConnectionId='4' Name="isSignedIn" HorizontalAlignment="Left" Margin="10,283,0,0" TextWrapping="Wrap" Text="{Binding info, Mode=TwoWay}" VerticalAlignment="Top" Width="315" Height="47" Foreground="#FFFD0101" />
+        <PasswordBox HorizontalAlignment="Left" Margin="173,150,0,0" VerticalAlignment="Top" Height="20" Width="177" Password="{Binding pass,Mode=TwoWay}" />
+
+    </Grid>
+</Page>
+
