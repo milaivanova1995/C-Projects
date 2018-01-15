@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Magic1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="w" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="h" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Magic1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Magic1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Magic2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="w" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="h" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Magic2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Magic2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Magic3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="w" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="h" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Magic3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Magic3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Magic1SoapIn">
+    <wsdl:part name="parameters" element="tns:Magic1" />
+  </wsdl:message>
+  <wsdl:message name="Magic1SoapOut">
+    <wsdl:part name="parameters" element="tns:Magic1Response" />
+  </wsdl:message>
+  <wsdl:message name="Magic2SoapIn">
+    <wsdl:part name="parameters" element="tns:Magic2" />
+  </wsdl:message>
+  <wsdl:message name="Magic2SoapOut">
+    <wsdl:part name="parameters" element="tns:Magic2Response" />
+  </wsdl:message>
+  <wsdl:message name="Magic3SoapIn">
+    <wsdl:part name="parameters" element="tns:Magic3" />
+  </wsdl:message>
+  <wsdl:message name="Magic3SoapOut">
+    <wsdl:part name="parameters" element="tns:Magic3Response" />
+  </wsdl:message>
+  <wsdl:portType name="MagicServicesSoap">
+    <wsdl:operation name="Magic1">
+      <wsdl:input message="tns:Magic1SoapIn" />
+      <wsdl:output message="tns:Magic1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Magic2">
+      <wsdl:input message="tns:Magic2SoapIn" />
+      <wsdl:output message="tns:Magic2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Magic3">
+      <wsdl:input message="tns:Magic3SoapIn" />
+      <wsdl:output message="tns:Magic3SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MagicServicesSoap" type="tns:MagicServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Magic1">
+      <soap:operation soapAction="http://tempuri.org/Magic1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Magic2">
+      <soap:operation soapAction="http://tempuri.org/Magic2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Magic3">
+      <soap:operation soapAction="http://tempuri.org/Magic3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MagicServicesSoap12" type="tns:MagicServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Magic1">
+      <soap12:operation soapAction="http://tempuri.org/Magic1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Magic2">
+      <soap12:operation soapAction="http://tempuri.org/Magic2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Magic3">
+      <soap12:operation soapAction="http://tempuri.org/Magic3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MagicServices">
+    <wsdl:port name="MagicServicesSoap" binding="tns:MagicServicesSoap">
+      <soap:address location="http://localhost:54176/Code/MagicServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MagicServicesSoap12" binding="tns:MagicServicesSoap12">
+      <soap12:address location="http://localhost:54176/Code/MagicServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
